@@ -1,0 +1,33 @@
+.result-table {
+    width:100%;
+    border: 1px solid blue;
+    border-style: dashed;
+    border-collapse: collapse;
+}
+
+.result-table td {
+    border: 1px solid #1b9fe0;
+    border-style: dashed;
+}
+
+.result-table tr {
+    border: 1px solid #1b9fe0;
+    border-style: dashed;
+}
+
+#div-table {
+padding-top: 10px;
+}
+
+#div-top {
+    padding-left: 50px;
+}
+
+#completedCheckbox {
+    margin-left: 10px;
+}
+
+#inputSubmit {
+    width: 200px;
+    height: 25px;
+}

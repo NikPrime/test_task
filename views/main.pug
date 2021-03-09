@@ -1,0 +1,28 @@
+doctype html
+html
+   head
+        title NodeJS Project
+        link(rel='stylesheet' href='/stylesheets/style.css')
+   body
+    div(id='div-top')
+     form(method='POST' id='formSub' required)
+      input(id='inputSubmit' type='text' onfocus="let temp_value = this.value; this.value = ''; this.value = temp_value;" name='inputvalue' value=inputValue autofocus)
+      label  Поиск дел
+      if isCheck
+       input(type='checkbox' id='completedCheckbox' name='isCheck' size='50' checked)
+      else
+       input(type='checkbox' id='completedCheckbox' name='isCheck' size='50')
+      label      Искать только невыполненные
+    div(id='div-table')
+     if tasks && tasks.length > 0 && inputValue
+           table(class='result-table')
+               each val in tasks
+                   tr
+                       td #{val.id}
+                       if val.completed
+                        td
+                         strike #{val.title}
+                       else
+                        td #{val.title}
+    script(type="module" src="/javascripts/script.js")
+
