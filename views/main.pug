@@ -6,15 +6,15 @@ html
    body
     div(id='div-top')
      form(method='POST' id='formSub' required)
-      input(id='inputSubmit' type='text' onfocus="let temp_value = this.value; this.value = ''; this.value = temp_value;" name='inputvalue' value=inputValue autofocus)
+      input(id='inputSubmit' type='text' onfocus="let temp_value = this.value; this.value = ''; this.value = temp_value;" name='valueFromInput' value=valueFromInput autofocus)
       label  Поиск дел
-      if isCheck
-       input(type='checkbox' id='completedCheckbox' name='isCheck' size='50' checked)
+      if isCheckboxCheck
+       input(type='checkbox' id='completedCheckbox' name='isCheckboxCheck' size='50' checked)
       else
-       input(type='checkbox' id='completedCheckbox' name='isCheck' size='50')
+       input(type='checkbox' id='completedCheckbox' name='isCheckboxCheck' size='50')
       label      Искать только невыполненные
     div(id='div-table')
-     if tasks && tasks.length > 0 && inputValue
+     if tasks && tasks.length > 0 && valueFromInput
            table(class='result-table')
                each val in tasks
                    tr
