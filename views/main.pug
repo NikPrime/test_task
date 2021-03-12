@@ -3,26 +3,15 @@ html
    head
         title NodeJS Project
         link(rel='stylesheet' href='/stylesheets/style.css')
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
    body
+
     div(id='div-top')
      form(method='POST' id='formSub' required)
-      input(id='inputSubmit' type='text' onfocus="let temp_value = this.value; this.value = ''; this.value = temp_value;" name='valueFromInput' value=valueFromInput autofocus)
-      label  Поиск дел
-      if isCheckboxCheck
-       input(type='checkbox' id='completedCheckbox' name='isCheckboxCheck' size='50' checked)
-      else
-       input(type='checkbox' id='completedCheckbox' name='isCheckboxCheck' size='50')
-      label      Искать только невыполненные
+      input(type='text' id='inputSubmit' name='valueFromInput')
+      label   Поиск дел
+      input(type='checkbox' id='completedCheckbox' name='isCheckboxCheck' size='50' checked)
+      label Искать только невыполненные
     div(id='div-table')
-     if tasks && tasks.length > 0 && valueFromInput
-           table(class='result-table')
-               each val in tasks
-                   tr
-                       td #{val.id}
-                       if val.completed
-                        td
-                         strike #{val.title}
-                       else
-                        td #{val.title}
     script(type="module" src="/javascripts/script.js")
 
